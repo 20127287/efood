@@ -1,22 +1,23 @@
 import React from "react";
 import "./App.css";
 // import Swiper core and required modules
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
+          autoplay={{ delay: 5000 }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
