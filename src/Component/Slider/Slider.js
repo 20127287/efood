@@ -5,12 +5,12 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./Slider.css";
 
-const Slider = ({ url }) => {
+const Slider = (props) => {
   const slides = [];
-  for (let i = 0; i < url.length; i++) {
+  for (let i = 0; i < props.url.length; i++) {
     slides.push(
       <SwiperSlide>
-        <img src={url[i]} alt="Error" />
+        <img src={props.url[i]} alt="Error" />
       </SwiperSlide>
     );
   }
