@@ -1,0 +1,17 @@
+.swiper {
+  width: 80%;
+  height: fit-content;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.swiper-pagination-bullet:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
