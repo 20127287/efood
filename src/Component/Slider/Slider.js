@@ -5,7 +5,15 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./Slider.css";
 
-const Slider = () => {
+const Slider = ({ url }) => {
+  const slides = [];
+  for (let i = 0; i < url.length; i++) {
+    slides.push(
+      <SwiperSlide>
+        <img src={url[i]} alt="Error" />
+      </SwiperSlide>
+    );
+  }
   return (
     <div className="Slider">
       <Swiper
@@ -15,24 +23,7 @@ const Slider = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        <SwiperSlide>
-          <img src="https://www.easyslidertexas.com/img/easy-slider-festival-five.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://www.easyslidertexas.com/img/easy-slider-festival-five.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://www.easyslidertexas.com/img/easy-slider-festival-five.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://www.easyslidertexas.com/img/easy-slider-festival-five.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://www.easyslidertexas.com/img/easy-slider-festival-five.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://www.easyslidertexas.com/img/easy-slider-festival-five.jpg" alt="" />
-        </SwiperSlide>
+        {slides}
       </Swiper>
     </div>
   );
